@@ -1,0 +1,17 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross qt4-cmake
+
+NAME="mingw64-x86_64-libdbusmenu-qt"
+VERSION=0.9.2
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Qt DBusMenu implementation for Win64 toolchain"
+DESCRIPTION="This library provides a Qt implementation of the DBusMenu protocol.
+The DBusMenu protocol makes it possible for applications to export and import
+their menus over DBus."
+HOMEPAGE="https://launchpad.net/libdbusmenu-qt"
+SRC_URI="http://launchpad.net/libdbusmenu-qt/trunk/${VERSION}/+download/libdbusmenu-qt-${VERSION}.tar.bz2"
+SRC_DIR="libdbusmenu-qt-${VERSION}"
+PATCH_URI="0.8.2-install-dirs.patch"
+
+CYGCMAKE_ARGS="-DWITH_DOC=OFF -D__DBUSMENU_HAVE_GCC_VISIBILITY=OFF"
