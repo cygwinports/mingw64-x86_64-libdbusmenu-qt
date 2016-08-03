@@ -1,0 +1,11 @@
+--- origsrc/libdbusmenu-qt-0.9.3/src/dbusmenu_export.h	2015-06-25 10:11:09.000000000 -0500
++++ src/libdbusmenu-qt-0.9.3/src/dbusmenu_export.h	2016-07-31 22:21:41.556488700 -0500
+@@ -28,7 +28,7 @@
+ // Qt
+ #include <QtCore/QtGlobal>
+ 
+-#ifdef dbusmenu_qt_EXPORTS
++#if defined(dbusmenu_qt_EXPORTS) || defined(dbusmenu_qt5_EXPORTS)
+ #define DBUSMENU_EXPORT Q_DECL_EXPORT
+ #else
+ #define DBUSMENU_EXPORT Q_DECL_IMPORT
